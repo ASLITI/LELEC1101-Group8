@@ -1,0 +1,39 @@
+\usepackage[in]{fullpage} % Gives page 1in margins
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{mathtools}
+\usepackage[inline]{enumitem} % Custom enumerations
+\usepackage[squaren,Gray]{SIunits} % Physical units rendering
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+%\usepackage{xfrac}
+\usepackage{bm}
+\usepackage{color} % Colors in text
+\usepackage[version=3]{mhchem} % Chemical reactions
+\usepackage{multirow} % Row fusion in tabulars
+\usepackage{tabulary} % Tabular with automatic column width
+\usepackage{appendix} % Environment appendices
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\newcommand{\diff}[1]{\mathrm{d}#1}
+
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\oldvec{\bm{#1}}}
+\newcommand{\uvec}[1]{\hat{\bm{#1}}}
+
+\newcommand{\TODO}[1]{\colorbox{red}{\textbf{\textsc{TODO: #1}}}}
+
+\newcommand{\e}[1]{\ensuremath{\cdot 10^{#1}}}
+
+\makeatletter
+\newcommand\reaction@[1]{\begin{equation}\ce{#1}\end{equation}}
+\newcommand\reaction@nonumber[1]%
+{\begin{equation*}\ce{#1}\end{equation*}}
+\newcommand\reaction{\@ifstar{\reaction@nonumber}{\reaction@}}
+\makeatother
